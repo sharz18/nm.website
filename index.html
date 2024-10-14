@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DMI Engineering College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+
+        <div class="container">
+            <div class="head1"><h1>DMI Engineering College</h1></div>
+            
+            <div class="index">
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#courses">Courses</a>
+                    <a href="#contactus">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Embedded Chatbot 
+    <div style="width: 300px; height: 500px; border: 2px solid #333; display: flex; flex-direction: column; margin: 50px auto;">
+        <div id="chat-window" style="flex: 1; padding: 10px; overflow-y: scroll; border-bottom: 2px solid #333;">
+            <div id="messages" style="display: flex; flex-direction: column;"></div>
+        </div>
+        <div style="display: flex; padding: 10px; background-color: #f1f1f1;">
+            <input type="text" id="user-input" placeholder="Type your message here..." 
+                style="flex: 1; padding: 10px; border: 2px solid #333; border-radius: 5px;">
+            <button onclick="sendMessage()" 
+                style="padding: 10px; border: none; background-color: #333; color: #fff; cursor: pointer; margin-left: 10px;">Send</button>
+        </div>
+    </div>
+    -->
+
+    <!-- Chatbot Script 
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput === "") return; // Don't send empty messages
+            
+            addMessage(userInput, 'user-message');
+            
+            // Clear the input field
+            document.getElementById('user-input').value = "";
+
+            // Make an HTTP POST request to the Java Servlet
+            fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `message=${encodeURIComponent(userInput)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage(data.botMessage, 'bot-message');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addMessage("Oops, something went wrong!", 'bot-message');
+            });
+        }
+
+        function addMessage(message, className) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = className;
+            messageDiv.style.padding = "10px";
+            messageDiv.style.margin = "5px 0";
+            messageDiv.style.borderRadius = "10px";
+            messageDiv.innerText = message;
+
+            // Add specific styles for user or bot messages
+            if (className === 'user-message') {
+                messageDiv.style.backgroundColor = "#d1e7dd";
+                messageDiv.style.alignSelf = "flex-end";
+            } else {
+                messageDiv.style.backgroundColor = "#f8d7da";
+                messageDiv.style.alignSelf = "flex-start";
+            }
+
+            const messagesContainer = document.getElementById('messages');
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+    -->
+
+
+
+    <div class="welcome-container">
+        <div class="welcome-text">
+            <h2>Welcome..!</h2>
+            <p>DMI Engineering College was founded in 2008 under the visionary leadership of Father J.E.Arul Raj,
+                with the guidance of Principal Dr.A.Albert Raj.This institution has been dedicated to fostering a 
+                comprehensive educational environment that emphasizes innovation and excellence in engineering 
+                disciplines. With a commitment to high quality education and the holistic development of students,
+                DMI Engineering College strives to equip future engineers with the skills and knowledge needed to 
+                excel in their careers and contibute meaningfully to society.</p>
+        </div>
+        <img src="img/pp.jpg" alt="Welcome Image" class="welcome-image">
+    </div>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Founded in 2008, DMI Engineering College has established itself as a leader in technical education. With
+               dedicated faculty and cutting-edge facilities, we prepare our students to meet the challenges of the 
+               modern engineering world.</p><br><br>
+               <a href="our-achievements.html" 
+               style ="display: inline; margin-top: 20px; background-color: #0d7499aa; color: rgb(255, 255, 255); padding: 10px 65px; margin: 2px; text-decoration: none;">Our Achievements</a>
+               <a href="f.html"
+               style ="display: inline; margin-top: 20px; background-color: #0d7499aa; color: rgb(255, 255, 255); padding: 10px 93px; margin: 2px; text-decoration: none;">Facilities</a>
+               <a href="uc.html"
+               style ="display: inline; margin-top: 20px; background-color: #0d7499aa; color: rgb(255, 255, 255); padding: 10px 75px; margin: 2px; text-decoration: none;">Upcoming Events</a>
+               <a href="c.html"
+               style ="display: inline; margin-top: 20px; background-color: #0d7499aa; color: rgb(255, 255, 255); padding: 10px 100px; margin: 2px; text-decoration: none;">Clubs</a>
+               <a href="cm.html"
+               style ="display: inline; margin-top: 20px; background-color: #0d7499aa; color: rgb(255, 255, 255); padding: 10px 85px; margin: 2px; text-decoration: none;">Committees</a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 style="text-align: center;">Courses We Offer</h2><br>
+            <div class="course-grid">
+                <div class="course-box">
+                    <h3>Computer Science Engineering</h3><br>
+                    <p>Specialized in AI, software and programming</p><br>
+                    <a href="cse.html" class="button">To know more</a>
+                </div>
+
+                <div class="course-box">
+                    <h3>Information Technology</h3><br>
+                    <p>Explore AI, machine learning and big data technologies.</p><br>
+                    <a href="it.html" class="button">To know more</a>
+                </div>
+
+                <div class="course-box">
+                    <h3>Mechanical Engineering</h3><br>
+                    <p>Learn about design, thermodynamics, and advanced manufacturing techniques.</p><br>
+                    <a href="mech.html" class="button">To know more</a>
+                </div>
+
+                <div class="course-box">
+                    <h3>Electrical and Electronics Engineering</h3><br>
+                    <p>Learn about design, thermodynamics, and advanced manufacturing techniques.</p><br>
+                    <a href="eee.html" class="button">To know more</a>
+                </div>
+
+                <div class="course-box">
+                    <h3>Electronics and Communication</h3><br>
+                    <p>Master in communication systems, and embedded technologies.</p><br>
+                    <a href="ece.html" class="button">To know more</a>
+                </div>
+
+                <div class="course-box">
+                    <h3>Artificial Intelligence and Data Science</h3><br>
+                    <p>Explore AI, machine learning and big data technologies.</p><br>
+                    <a href="ai&ds.html" class="button">To know more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactus" class="contactus">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div>
+                <h3>Our Office</h3>
+                <p>
+                    Kumarapuram Road<br>
+                    Aralvaimozhi - 629301
+                </p>
+            </div>
+            <div>
+                <h3>Phone</h3>
+                <p>+123-456-7890<br>
+                +384-138-2477</p>
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <p>dmiec@gmail.com<br>
+                dmieckk@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Your Information</h2>
+        <div class="contact-form">
+            <form action="0" method="post">
+                <div class="form row">
+                    <div>
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                </div>
+                            <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+                </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DMI Engineering College. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
